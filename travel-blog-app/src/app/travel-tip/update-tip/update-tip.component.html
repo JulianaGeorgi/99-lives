@@ -1,0 +1,60 @@
+<form [formGroup]="tipForm" (ngSubmit)="onEditTip()">
+    <div class="form-group">
+        <label for="tipTitle">Title:</label>
+        <input type="text" id="tipTitle" formControlName="tipTitle" />
+
+        <ng-container *ngIf="tipForm.get('tipTitle')?.touched">
+          <p class="error" *ngIf="tipForm.get('tipTitle')?.errors?.['required']">
+            Tip title is required!
+          </p>
+          <p class="error" *ngIf="tipForm.get('tipTitle')?.errors?.['minlength']">
+            Title's length should not be less than 5!
+          </p>
+      </ng-container>
+    </div>
+
+    <div class="form-group">
+        <label for="authorName">Author's name:</label>
+        <input type="text" id="authorName" formControlName="authorName"  />
+
+        <ng-container *ngIf="tipForm.get('authorName')?.touched">
+        <p class="error" *ngIf="tipForm.get('authorName')?.errors?.['required']">
+          Please write your name or pseudonym.
+        </p>
+      </ng-container>
+
+    </div>
+
+    <div class="form-group">
+        <label for="imageUrl">ImageUrl:</label>
+        <input type="text" id="imageUrl" formControlName="imageUrl"  />
+
+        <ng-container *ngIf="tipForm.get('imageUrl')?.touched">
+        <p class="error" *ngIf="tipForm.get('imageUrl')?.errors?.['required']">
+          An image is required.
+        </p>
+      </ng-container>
+
+    </div>
+
+    <div class="form-group">
+        <label for="tipContent">Content:</label>
+        <textarea id="tipContent" formControlName="tipContent" >
+        </textarea>
+
+        <ng-container *ngIf="tipForm.get('tipContent')?.touched">
+        <p class="error" *ngIf="tipForm.get('tipContent')?.errors?.['required']">
+          Please share your amazing tip with us. 
+        </p>
+        <p class="error" *ngIf="tipForm.get('tipContent')?.errors?.['minlength']">
+          Tip must be at least 10 characters long.
+        </p>
+      </ng-container>
+
+    </div>
+
+    <div class="btn wrapper">
+        <button class="btn primary public" type="submit" [disabled]="tipForm.invalid">Save changes</button>
+        <button class="btn primary">Cancel</button>
+    </div>
+</form>

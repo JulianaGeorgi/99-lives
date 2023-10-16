@@ -1,0 +1,20 @@
+/*--- HOME ---*/
+
+.home-header {
+    background-image: linear-gradient(to bottom, rgb(245, 246, 252), rgba(0, 125, 167, 0.356)), url('https://99livesblog.files.wordpress.com/2015/07/untitled-12-3.jpg?w=900');
+    max-width: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: relative; */
+    padding: 100px;
+    margin-bottom: 50px;
+}
+
+.home-header .btn.primary {
+    width: 20%;
+}
+
+.home-header .btn.primary a{
+    padding: 20px;
+}

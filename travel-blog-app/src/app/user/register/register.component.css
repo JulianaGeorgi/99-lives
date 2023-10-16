@@ -1,0 +1,12 @@
+.register.container {
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.register-form input {
+    margin-bottom: 10px;
+    width: 100%;
+}

@@ -1,0 +1,18 @@
+<div *ngIf="tip" class='tip-item' >
+    <figure class='tip-img'>
+        <img alt='image' src={{tip.imageUrl}} />
+    </figure>
+    <div class="description">
+        <h3>{{ tip.tipTitle }}</h3>
+        <p>{{ tip.tipContent }}</p>
+    </div>
+    <div class="btn wrapper" *ngIf="isOwner">
+        <button class='btn primary' (click)="onEditTip(tip)">
+            Edit <span><b>♡</b></span>
+        </button>
+        <button class='btn primary' (click)="deleteTip()">
+            Delete 
+        </button>
+    </div>
+    <app-update-tip (closeUpdateTipEvent)="showUpdatePostTip($any($event))" *ngIf="showUpdatePost"/>
+</div>
